@@ -10,7 +10,7 @@ React adapter for [featuretoggle-sdk-typescript](https://www.npmjs.com/package/f
 bun add featuretoggle-sdk-react featuretoggle-sdk-typescript react
 ```
 
-Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.0.0).
+Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.0.1).
 
 ## Quick start
 
@@ -34,7 +34,7 @@ function Checkout() {
 
 ## Integration patterns
 
-See the [integration cookbook](https://github.com/feature-toggle/feature-toggle-monorepo/blob/main/docs/17-sdk-integration-patterns.md) for SSR seed, BYO client, `autoInit={false}`, and more (patterns I–N).
+See [INTEGRATION.md](./INTEGRATION.md) for server loader patterns, SSR seed, bring-your-own client, `autoInit={false}`, and security notes.
 
 ## API
 
