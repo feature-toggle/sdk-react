@@ -2,6 +2,8 @@
 
 React adapter for [featuretoggle-sdk-typescript](https://www.npmjs.com/package/featuretoggle-sdk-typescript) — `FeatureToggleProvider`, `useFeature`, and `useFeatureToggle`.
 
+[![Publish to npm](https://github.com/feature-toggle/sdk-react/actions/workflows/publish.yml/badge.svg)](https://github.com/feature-toggle/sdk-react/actions/workflows/publish.yml)
+
 ## Install
 
 ```bash
