@@ -1,3 +1,4 @@
+import "./preload.js";
 import { afterEach, describe, expect, mock, test } from "bun:test";
 import { render, waitFor } from "@testing-library/react";
 import { StrictMode } from "react";
