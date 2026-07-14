@@ -10,7 +10,7 @@ React adapter for [featuretoggle-sdk-typescript](https://www.npmjs.com/package/f
 bun add featuretoggle-sdk-react featuretoggle-sdk-typescript react
 ```
 
-Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.0.4).
+Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.0.5).
 
 ## Quick start
 
@@ -34,12 +34,25 @@ function Checkout() {
 
 ## Integration patterns
 
-See [INTEGRATION.md](./INTEGRATION.md) for server loader patterns, SSR seed, bring-your-own client, `autoInit={false}`, and security notes.
+Full recipes in [INTEGRATION.md](./INTEGRATION.md):
+
+| Pattern | See |
+|---------|-----|
+| Client-only SPA | [INTEGRATION.md](./INTEGRATION.md#client-only-spa-simplest) |
+| Bring-your-own client | [INTEGRATION.md](./INTEGRATION.md#bring-your-own-client) |
+| SSR seed (no flash) | [INTEGRATION.md](./INTEGRATION.md#ssr-seed-no-flash) |
+| SSR props (component-level) | [INTEGRATION.md](./INTEGRATION.md#ssr-props-component-level) |
+| Companion hook (bulk / refresh) | [INTEGRATION.md](./INTEGRATION.md#companion-hook-bulk--refresh) |
+| Manual init | [INTEGRATION.md](./INTEGRATION.md#manual-init) |
+
+Server loader patterns: [featuretoggle-sdk-typescript INTEGRATION.md](https://github.com/feature-toggle/sdk-typescript/blob/main/INTEGRATION.md#server-patterns-node).
 
 ## API
 
 - `<FeatureToggleProvider>` — `apiKey`, optional `client`, `initialFeatures`, `initialEtag`, `autoInit` (default `true`)
 - `useFeature(key)` — `{ enabled, value, loading, error }`
 - `useFeatureToggle()` — `{ init, refresh, getFeatures, loading, error }`
+
+For **`stream: "off"`** or **`pollInterval`**, pass a custom **`client`** built with `new FeatureToggle({ ... })` from `featuretoggle-sdk-typescript` — those options are not provider props yet.
 
 Import `FeatureResponse` from `featuretoggle-sdk-typescript` — not re-exported from this package.
