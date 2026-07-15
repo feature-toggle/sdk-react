@@ -1,5 +1,7 @@
-import type { FeatureResponse } from "featuretoggle-sdk-typescript";
-import type { FeatureToggle } from "featuretoggle-sdk-typescript";
+import type {
+  FeatureResponse,
+  FeatureToggle,
+} from "featuretoggle-sdk-typescript";
 
 export type FeatureToggleProviderProps = {
   apiKey?: string;

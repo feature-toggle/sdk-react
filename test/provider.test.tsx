@@ -1,8 +1,8 @@
 import "./preload.js";
 import { afterEach, describe, expect, mock, test } from "bun:test";
 import { render, waitFor } from "@testing-library/react";
-import { StrictMode } from "react";
 import { FeatureToggle } from "featuretoggle-sdk-typescript";
+import { StrictMode } from "react";
 
 import {
   FeatureToggleProvider,
@@ -161,7 +161,9 @@ describe("FeatureToggleProvider", () => {
   });
 
   test("init failure surfaces error on hooks", async () => {
-    const fetchFn = createDefaultMockFetch(() => new Response(null, { status: 500 }));
+    const fetchFn = createDefaultMockFetch(
+      () => new Response(null, { status: 500 }),
+    );
 
     const client = new FeatureToggle({
       apiKey: "ft_test_key",
@@ -212,7 +214,8 @@ describe("FeatureToggleProvider", () => {
         });
       }
 
-      const response = bulkResponses[Math.min(bulkCalls, bulkResponses.length - 1)]!;
+      const response =
+        bulkResponses[Math.min(bulkCalls, bulkResponses.length - 1)]!;
       bulkCalls += 1;
       return response;
     });

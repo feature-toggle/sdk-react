@@ -12,10 +12,7 @@ export function feature(
   };
 }
 
-export function jsonResponse(
-  body: unknown,
-  init: ResponseInit = {},
-): Response {
+export function jsonResponse(body: unknown, init: ResponseInit = {}): Response {
   const headers = new Headers(init.headers);
   if (!headers.has("Content-Type")) {
     headers.set("Content-Type", "application/json");

@@ -1,6 +1,6 @@
 import {
-  FeatureToggle,
   type FeatureResponse,
+  FeatureToggle,
 } from "featuretoggle-sdk-typescript";
 import {
   useCallback,
