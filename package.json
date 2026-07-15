@@ -24,13 +24,12 @@
   },
   "scripts": {
     "build": "tsup",
-    "test": "bun run --filter featuretoggle-sdk-typescript build && bun run test:ci",
-    "test:ci": "bun test --preload ./test/preload.ts",
+    "test": "bun test --preload ./test/preload.ts",
     "lint": "eslint .",
     "format": "biome check --write --config-path biome.standalone.json .",
     "format:check": "biome ci --config-path biome.standalone.json .",
     "check-types": "tsc --noEmit",
-    "verify": "bun run format:check && bun run lint && bun run check-types && bun run test:ci"
+    "verify": "bun run format:check && bun run lint && bun run check-types && bun run test"
   },
   "peerDependencies": {
     "react": ">=18",
