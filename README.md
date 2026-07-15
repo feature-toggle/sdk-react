@@ -10,7 +10,7 @@ React adapter for [featuretoggle-sdk-typescript](https://www.npmjs.com/package/f
 bun add featuretoggle-sdk-react featuretoggle-sdk-typescript react
 ```
 
-Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.0.5).
+Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.0.6).
 
 ## Quick start
 

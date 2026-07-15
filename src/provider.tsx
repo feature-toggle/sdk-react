@@ -38,7 +38,6 @@ export function FeatureToggleProvider({
   initialFeatures,
   initialEtag,
   autoInit = true,
-  pollInterval: _pollInterval,
   children,
 }: FeatureToggleProviderProps) {
   const ownsClient = clientProp === undefined;
