@@ -39,6 +39,7 @@ Full recipes in [INTEGRATION.md](./INTEGRATION.md):
 | Pattern | See |
 |---------|-----|
 | Client-only SPA | [INTEGRATION.md](./INTEGRATION.md#client-only-spa-simplest) |
+| Stream off + poll | [INTEGRATION.md](./INTEGRATION.md#stream-off--poll) |
 | Bring-your-own client | [INTEGRATION.md](./INTEGRATION.md#bring-your-own-client) |
 | SSR seed (no flash) | [INTEGRATION.md](./INTEGRATION.md#ssr-seed-no-flash) |
 | SSR props (component-level) | [INTEGRATION.md](./INTEGRATION.md#ssr-props-component-level) |
@@ -49,10 +50,10 @@ Server loader patterns: [featuretoggle-sdk-typescript INTEGRATION.md](https://gi
 
 ## API
 
-- `<FeatureToggleProvider>` — `apiKey`, optional `client`, `initialFeatures`, `initialEtag`, `autoInit` (default `true`)
+- `<FeatureToggleProvider>` — `apiKey`, optional `client`, `stream`, `pollInterval`, `initialFeatures`, `initialEtag`, `autoInit` (default `true`)
 - `useFeature(key)` — `{ enabled, value, loading, error }`
 - `useFeatureToggle()` — `{ init, refresh, getFeatures, loading, error }`
 
-For **`stream: "off"`** or **`pollInterval`**, pass a custom **`client`** built with `new FeatureToggle({ ... })` from `featuretoggle-sdk-typescript` — those options are not provider props yet.
+`stream` and `pollInterval` forward to the owned Core client (same semantics as `featuretoggle-sdk-typescript`). Use BYO `client` for custom `fetch` / visibility.
 
 Import `FeatureResponse` from `featuretoggle-sdk-typescript` — not re-exported from this package.

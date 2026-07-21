@@ -6,6 +6,9 @@ import type {
 export type FeatureToggleProviderProps = {
   apiKey?: string;
   client?: FeatureToggle;
+  /** SSE transport — forwarded to Core; default `auto`. */
+  stream?: "auto" | "notify" | "off";
+  /** Poll interval (seconds) when `stream: "off"` — forwarded to Core. */
   pollInterval?: number;
   initialFeatures?: FeatureResponse[];
   initialEtag?: string;

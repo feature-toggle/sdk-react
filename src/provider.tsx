@@ -35,6 +35,8 @@ function isSeeded(initialFeatures: FeatureResponse[] | undefined): boolean {
 export function FeatureToggleProvider({
   apiKey,
   client: clientProp,
+  stream,
+  pollInterval,
   initialFeatures,
   initialEtag,
   autoInit = true,
@@ -53,6 +55,8 @@ export function FeatureToggleProvider({
       clientRef.current?.close();
       clientRef.current = new FeatureToggle({
         apiKey,
+        stream,
+        pollInterval,
         initialFeatures,
         initialEtag,
       });

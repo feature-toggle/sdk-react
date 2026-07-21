@@ -264,4 +264,55 @@ describe("FeatureToggleProvider", () => {
 
     view.unmount();
   });
+
+  test("stream off + pollInterval forwards to owned client", async () => {
+    let streamCalls = 0;
+    let bulkCalls = 0;
+
+    globalThis.fetch = (async (input: RequestInfo | URL) => {
+      const url = String(input);
+      if (url.endsWith("/v1/features/stream")) {
+        streamCalls += 1;
+        return new Response(new ReadableStream(), {
+          status: 200,
+          headers: { "Content-Type": "text/event-stream" },
+        });
+      }
+
+      bulkCalls += 1;
+      return jsonResponse(fixture, {
+        headers: {
+          ETag: `"${bulkCalls}"`,
+          "X-FeatureToggle-Poll-Interval-Sec": "0",
+        },
+      });
+    }) as typeof fetch;
+
+    const view = render(
+      <FeatureToggleProvider
+        apiKey="ft_test_key"
+        stream="off"
+        pollInterval={1}
+      >
+        <Probe featureKey="new-checkout" />
+      </FeatureToggleProvider>,
+    );
+
+    await waitFor(() => {
+      expect(view.getByTestId("loading").textContent).toBe("false");
+      expect(view.getByTestId("enabled").textContent).toBe("true");
+    });
+
+    expect(streamCalls).toBe(0);
+    const bulkAfterInit = bulkCalls;
+
+    await waitFor(
+      () => {
+        expect(bulkCalls).toBeGreaterThan(bulkAfterInit);
+      },
+      { timeout: 2500 },
+    );
+
+    view.unmount();
+  });
 });

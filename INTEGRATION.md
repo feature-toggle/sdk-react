@@ -149,9 +149,21 @@ function Checkout() {
 }
 ```
 
+### Stream off + poll
+
+Forward Core transport options on the provider — no BYO client required:
+
+```tsx
+<FeatureToggleProvider apiKey={apiKey} stream="off" pollInterval={5}>
+  <App />
+</FeatureToggleProvider>
+```
+
+Same semantics as `new FeatureToggle({ stream: "off", pollInterval: 5 })`. Use **`pollInterval: 0`** to disable the timer (tab focus + manual `refresh()` only).
+
 ### Bring-your-own client
 
-Pass a pre-constructed `FeatureToggle` (tests, shared instance, custom `fetch` mock).
+Pass a pre-constructed `FeatureToggle` (tests, shared instance, custom `fetch` mock). Provider `stream` / `pollInterval` are ignored when `client` is set.
 
 ```tsx
 import { FeatureToggle } from "featuretoggle-sdk-typescript";
