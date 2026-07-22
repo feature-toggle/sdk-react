@@ -289,11 +289,7 @@ describe("FeatureToggleProvider", () => {
     }) as typeof fetch;
 
     const view = render(
-      <FeatureToggleProvider
-        apiKey="ft_test_key"
-        stream="off"
-        pollInterval={1}
-      >
+      <FeatureToggleProvider apiKey="ft_test_key" stream="off" pollInterval={1}>
         <Probe featureKey="new-checkout" />
       </FeatureToggleProvider>,
     );
