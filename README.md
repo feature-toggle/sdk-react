@@ -7,6 +7,12 @@ React adapter for [featuretoggle-sdk-typescript](https://www.npmjs.com/package/f
 ## Install
 
 ```bash
+npm install featuretoggle-sdk-react featuretoggle-sdk-typescript react
+# or
+pnpm add featuretoggle-sdk-react featuretoggle-sdk-typescript react
+# or
+yarn add featuretoggle-sdk-react featuretoggle-sdk-typescript react
+# or
 bun add featuretoggle-sdk-react featuretoggle-sdk-typescript react
 ```
 
@@ -32,9 +38,9 @@ function Checkout() {
 }
 ```
 
-## Integration patterns
+## Cookbook
 
-Full recipes in [INTEGRATION.md](./INTEGRATION.md):
+Full recipes in [INTEGRATION.md](./INTEGRATION.md) (Cookbook):
 
 | Pattern | See |
 |---------|-----|
@@ -46,7 +52,7 @@ Full recipes in [INTEGRATION.md](./INTEGRATION.md):
 | Companion hook (bulk / refresh) | [INTEGRATION.md](./INTEGRATION.md#companion-hook-bulk--refresh) |
 | Manual init | [INTEGRATION.md](./INTEGRATION.md#manual-init) |
 
-Server loader patterns: [featuretoggle-sdk-typescript INTEGRATION.md](https://github.com/feature-toggle/sdk-typescript/blob/main/INTEGRATION.md#server-patterns-node).
+Server loader patterns: [TypeScript cookbook](https://github.com/feature-toggle/sdk-typescript/blob/main/INTEGRATION.md#server-patterns-node).
 
 ## API
 
