@@ -11,7 +11,7 @@
         "@testing-library/react": "^16.3.0",
         "@types/react": "^19.2.0",
         "eslint": "^9.28.0",
-        "featuretoggle-sdk-typescript": "^1.0.11",
+        "featuretoggle-sdk-typescript": "^1.1.0",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
         "tsup": "^8.5.0",
@@ -19,7 +19,7 @@
         "typescript-eslint": "^8.33.1",
       },
       "peerDependencies": {
-        "featuretoggle-sdk-typescript": "^1.0.11",
+        "featuretoggle-sdk-typescript": "^1.1.0",
         "react": ">=18",
       },
     },
@@ -313,7 +313,7 @@
 
     "fdir": ["fdir@6.5.0", "", { "peerDependencies": { "picomatch": "^3 || ^4" }, "optionalPeers": ["picomatch"] }, "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg=="],
 
-    "featuretoggle-sdk-typescript": ["featuretoggle-sdk-typescript@1.0.11", "", {}, "sha512-xTzSuIetfomD9wtM+BS6tdSdR4w6uKjg9UXDKgGronnLbnVmNBgteR6KfpKkxfoH1yMpup+f80VgdaR8eVEyvQ=="],
+    "featuretoggle-sdk-typescript": ["featuretoggle-sdk-typescript@1.1.0", "", {}, "sha512-UwqU1kPBaKzYDhaNyqo2XvjeZ8TTp/Gv+BWglsNCsixof7t6+LtQk0l3989vKixLdzOgYWaGPG7PL4lcbnA3Uw=="],
 
     "file-entry-cache": ["file-entry-cache@8.0.0", "", { "dependencies": { "flat-cache": "^4.0.0" } }, "sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ=="],
 

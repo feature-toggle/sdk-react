@@ -16,7 +16,7 @@ yarn add featuretoggle-sdk-react featuretoggle-sdk-typescript react
 bun add featuretoggle-sdk-react featuretoggle-sdk-typescript react
 ```
 
-Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.0.11).
+Peers: `react` (≥18), `featuretoggle-sdk-typescript` (^1.1.0).
 
 ## Quick start
 
