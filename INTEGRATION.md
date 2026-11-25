@@ -50,7 +50,7 @@ Forward Core transport options on the provider — no BYO client required:
 </FeatureToggleProvider>
 ```
 
-Same semantics as `new FeatureToggle({ stream: "off", pollInterval: 5 })`. Use **`pollInterval: 0`** to disable the timer (tab focus + manual `refresh()` only). With the default `stream="auto"`, each time the live stream opens or reopens it uses one sync (about 30 an hour per open tab); unchanged polls return `304` and don't count. Details: [Caching and syncs](https://featuretoggle.com/docs/caching).
+Same semantics as `new FeatureToggle({ stream: "off", pollInterval: 5 })`. Use **`pollInterval: 0`** to disable the timer (tab focus + manual `refresh()` only). With the default `stream="auto"`, each time the live stream opens or reconnects it uses one sync; how often streams reconnect is described in [Caching and syncs](https://featuretoggle.com/docs/caching). Unchanged polls return `304` and don't count.
 
 ### Bring-your-own client
 
